@@ -10,7 +10,10 @@ class ComponentTestController extends Controller
 
     public function showComponent1()
     {
-        return view('tests.component-test1');
+        $title = '春日';
+        $image = 'アプス';
+        $content = 'アパー';
+        return view('tests.component-test1', compact('title', 'image', 'content'));
     }
 
     public function showComponent2()
