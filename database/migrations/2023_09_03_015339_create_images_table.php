@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('owner_id')->constrained()
                 ->onUpdate('cascade')->onDelete('cascade');
+            //親テーブルが削除させた時、同時に削除される 
             $table->string('filename');
             $table->string('title')->nullable();
             $table->timestamps();
