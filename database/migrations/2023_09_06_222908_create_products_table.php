@@ -13,10 +13,18 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('information');
+            $table->unsignedInteger('price');
+            $table->boolean('is_selling');
+            $table->integer('sort_order')->nullable();
             $table->foreignId('shop_id')->constrained() //shopモデルのidしか登録できない様にする
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('secondary_category_id')->constrained(); //shopモデルのidしか登録できない様にする
             $table->foreignId('image1')->nullable()->constrained('images');
+            $table->foreignId('image2')->nullable()->constrained('images');
+            $table->foreignId('image3')->nullable()->constrained('images');
+            $table->foreignId('image4')->nullable()->constrained('images');
             //画像がないかもしれないから、_がないとDB名を入れる必要がある
             $table->timestamps();
         });

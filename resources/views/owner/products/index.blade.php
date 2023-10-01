@@ -13,22 +13,26 @@
                     <x-flash-message status="session('status')" />
 
                     <div class="flex justify-end mb-4" >
-                        <button onclick="location.href='{{route('owner.images.create')}}'" class="text-white bg-indigo-400 border-0   py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録</button>    
+                        <button onclick="location.href='{{route('owner.products.create')}}'" class="text-white bg-indigo-400 border-0   py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録</button>    
                     </div>
                     <div class="flex flex-wrap">
-                    @foreach ($images as $image)
+                    @foreach ($ownerInfo as $owner)
+                    @foreach ($owner->shop->product as $product) 
+                        
                     <div class="w-1/2 p-2 mb:p-4" >
-                         <a href="{{route('owner.images.edit',['image'=>$image->id])}}">
+                         <a href="{{route('owner.products.edit',['product'=>$product->id])}}">
+                        
 
-                        <x-thumbnail :filename="$image->filename" type='product' />
-                            <div class="" >{{$image->title}}</div>
+                        <x-thumbnail filename="{{$product->imageFirst->filename ?? ''}}" type='product' />
+                            {{-- <div class="" >{{$product->name}}</div> --}}
                         </a>
                      </div>
-                    
+                    @endforeach
                     @endforeach
                 </div>
-                    {{$images->links()}}
+                    {{-- {{$products->links()}} --}}
                 </div>
+                
             </div>
         </div>
     </div>
