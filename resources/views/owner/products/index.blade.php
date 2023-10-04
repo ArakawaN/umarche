@@ -24,7 +24,7 @@
                         
 
                         <x-thumbnail filename="{{$product->imageFirst->filename ?? ''}}" type='product' />
-                            {{-- <div class="" >{{$product->name}}</div> --}}
+                            <div class="text-gray-700" >{{$product->name}}</div>
                         </a>
                      </div>
                     @endforeach
