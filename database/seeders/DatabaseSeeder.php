@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Product;
+use App\Models\Stock;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,5 +31,8 @@ class DatabaseSeeder extends Seeder
             // StockSeeder::class,
             UserSeeder::class,
         ]);
+
+        Product::factory()->count(100)->create();
+        Stock::factory()->count(100)->create();
     }
 }
