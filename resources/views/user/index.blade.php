@@ -15,8 +15,7 @@
                     @foreach ($products as $product) 
                         
                     <div class="w-1/2 p-2 mb:p-4" >
-                         {{-- <a href="{{route('owner.products.edit',['product'=>$product->id])}}"> --}}
-                        
+                         <a href="{{route('user.items.show',['item'=>$product->id])}}">
 
                         <x-thumbnail filename="{{$product->imageFirst->filename ?? ''}}" type='product' />
                             <div class="mt-4">
