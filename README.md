@@ -17,3 +17,7 @@ php artisan storage:link で storage フォルダにリンク後,
 storage/app/public/products フォルダ内に
 保存すると表示されます。
 product フォルダは適宜作成してください。
+
+ショップの画像も表示する場合には、
+storage/app/public/shops フォルダを作成し、
+画像を保存して下さい
