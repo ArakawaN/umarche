@@ -18,6 +18,13 @@
                         {{ __('HOME') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('user.cart.index')" :active="request()->routeIs('user.cart.index')">
+                        {{ __('カート') }}
+                    </x-nav-link>
+                </div>
+
             </div>
 
             <!-- Settings Dropdown -->
@@ -71,6 +78,12 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('user.items.index')" :active="request()->routeIs('user.items.index')">
                 {{ __('HOME') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('user.cart.index')" :active="request()->routeIs('user.cart.index')">
+                {{ __('カート') }}
             </x-responsive-nav-link>
         </div>
 
