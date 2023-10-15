@@ -20,6 +20,11 @@
                             <h2 class="mb-4 text-sm title-font text-gray-500 tracking-widest">{{$product->category->name}}</h2>
                             <h1 class="mb-4 text-gray-900 text-3xl title-font font-medium ">{{$product->name}}</h1></h1>                    
                             <p class="mb-4 leading-relaxed">{{$product->information}}</p>
+
+                            <form method="POST" action="{{route('user.cart.add')}}">
+
+                                @csrf
+
                             <div class="flex justify-around items-center">
                                 <span class="title-font font-medium text-xl text-gray-900">{{number_format($product->price)}}<span class="text-sm" >円(税込)</span></span></span>
 
@@ -40,6 +45,10 @@
                                 <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">カートに入れる</button>
                               
                               </div>
+
+                              <input type="hidden" name="product_id"  value="{{$product->id}}" >
+
+                            </form>
        
                         </div>
                     </div>
