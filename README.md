@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+git clone
+git clone https://github.com/ArakawaN/umarche
+git clone -b ブランチ名 https://github.com/ArakawaN/umarche
+
 ##インストール後
 public/images フォルダ内に
 sample1.png ~ sample6.png として
@@ -21,3 +25,5 @@ product フォルダは適宜作成してください。
 ショップの画像も表示する場合には、
 storage/app/public/shops フォルダを作成し、
 画像を保存して下さい
+
+php artisan migrate:fresh --seed
