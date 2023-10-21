@@ -13,7 +13,7 @@
                     <div class="flex flex-wrap">
                     
                     @foreach ($products as $product) 
-                        
+                        @if($product->id >100)
                     <div class="w-1/2 p-2 mb:p-4" >
                          <a href="{{route('user.items.show',['item'=>$product->id])}}">
 
@@ -25,7 +25,8 @@
                               </div>
                         </a>
                      </div>
-                    
+                    @endif
+
                     @endforeach
 
                    
