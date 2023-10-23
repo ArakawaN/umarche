@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Stock;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
+use App\Jobs\SendThanksMail;
 
 
 class ItemController extends Controller
@@ -42,8 +43,12 @@ class ItemController extends Controller
         // $products = Product::availableItems()->get();
 
 
-        Mail::to('test@test.com')
-            ->send(new TestMail());
+        // Mail::to('test@test.com')
+        //     ->send(new TestMail());
+        SendThanksMail::dispatch();
+
+        // 非同期処理
+
 
         $products = Product::all();
 
