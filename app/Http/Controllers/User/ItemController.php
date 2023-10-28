@@ -45,10 +45,10 @@ class ItemController extends Controller
 
         // Mail::to('test@test.com')
         //     ->send(new TestMail());
-        SendThanksMail::dispatch();
+
 
         // 非同期処理
-
+        // SendThanksMail::dispatch();
 
         $products = Product::all();
 
