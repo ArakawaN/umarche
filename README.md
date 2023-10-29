@@ -27,3 +27,11 @@ storage/app/public/shops フォルダを作成し、
 画像を保存して下さい
 
 php artisan migrate:fresh --seed
+
+決済の処理として Stripe を利用しています。
+また、メール処理として mailtrap を使用しています
+
+必要な場合は、.env に追記して下さい。
+
+メール処理には、キューを使用しています。
+必要は場合は,php artisan queue:work を起動して下さい。
